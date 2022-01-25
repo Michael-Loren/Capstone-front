@@ -48,18 +48,28 @@ code {
   height: 150px;
 }
 
-.foodBtn{
-  display:inline-block;
-  margin-left: 90px;
-}
-
 .inner{
   display:inline-block;
 }
 
+.bottomCard{
+  margin-top: 10px;
+}
+
 .gridContainer{
-  padding: 100px;
-  margin-left: 200px;
+  display: inline-block;
+  float: right;
+  padding: 20px;
+  margin-right: 40px;
+}
+
+.sideMenu{
+  display: inline-block;
+  padding: 20px;
+  margin-left: 30px;
+  margin-top: 20px;
+  background-color: rgb(176, 191, 197);
+  border-radius: 10px;
 }
 
 .navItems {
@@ -73,9 +83,11 @@ code {
 
 .navCart{
   float: right;
+  display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
+  text-decoration: none;
 }
 
 .navBox {
@@ -84,4 +96,8 @@ code {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+}
+
+.navBtn {
+  float: right;
 }
