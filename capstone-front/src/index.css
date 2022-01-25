@@ -48,13 +48,12 @@ code {
   height: 150px;
 }
 
-.foodBtn{
-  display:inline-block;
-  margin-left: 90px;
-}
-
 .inner{
   display:inline-block;
+}
+
+.bottomCard{
+  margin-top: 10px;
 }
 
 .gridContainer{
@@ -84,9 +83,11 @@ code {
 
 .navCart{
   float: right;
+  display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
+  text-decoration: none;
 }
 
 .navBox {
@@ -95,4 +96,8 @@ code {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+}
+
+.navBtn {
+  float: right;
 }
