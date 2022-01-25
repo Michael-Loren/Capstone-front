@@ -1,8 +1,12 @@
 import React from "react"
 import MenuItems from "../Components/MenuItems"
+import SideMenu from "../Components/SideMenu"
 
 export default function HomePage(){
     return(
-        <MenuItems/>
+        <div>
+            <SideMenu/>
+            <MenuItems/>
+        </div>
     )
 }
