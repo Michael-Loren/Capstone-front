@@ -7,7 +7,7 @@ export default function NavBar () {
             {/* <li><a className="navItems">Home</a></li> */}
             <Link to = "/home" className="navItems"> Home </Link>
             <li><a className="navItems">Contact Us</a></li>
-            <li><a className="navItems">My Account</a></li>
+            <Link to = "/account" className="navItems"> Account </Link>
             {/* <li><a className="navCart">My Cart</a></li> */}
             <Link to = "/cart" className="navCart"> My Cart </Link>
         </ul>
