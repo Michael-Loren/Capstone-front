@@ -16,7 +16,7 @@ export default function MenuCard() {
 
     return(
         <div class="card">
-            <img src="https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2017/08/sushi-2853382.jpg" className="foodImage"/>
+            <img alt = "" prop = "" src="https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2017/08/sushi-2853382.jpg" className="foodImage"/>
             <div class="container">
                 <div className="bottomCard">
                 <h4><b>Food Name</b></h4>
