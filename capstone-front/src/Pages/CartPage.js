@@ -4,30 +4,30 @@ export default function CartPage() {
   return (
     <div>
       <h1>Shopping Cart</h1>
-      <div class="container p-4 my-5 bg-secondary text-black rounded">
-        <div class="container-sm  bg-light">
-          <div class="row">
-            <div class="col text-center h2">Menu Item</div>
-            <div class="col text-center h2">Price</div>
-            <div class="col  text-center h2">Quantity</div>
+      <div className="container p-4 my-5 bg-secondary text-black rounded">
+        <div className="container-sm  bg-light">
+          <div className="row">
+            <div className="col text-center h2">Menu Item</div>
+            <div className="col text-center h2">Price</div>
+            <div className="col  text-center h2">Quantity</div>
           </div>
         </div>
       </div>
-      <div class="container p-4 my-5 bg-secondary text-black rounded">
-        <div class="container-md  bg-light">
-          <div class="row">
-            <div class="col text-center h2">Menu Item</div>
-            <div class="col text-center h2">Price</div>
-            <div class="col text-center h2">Quantity</div>
+      <div className="container p-4 my-5 bg-secondary text-black rounded">
+        <div className="container-md  bg-light">
+          <div className="row">
+            <div className="col text-center h2">Menu Item</div>
+            <div className="col text-center h2">Price</div>
+            <div className="col text-center h2">Quantity</div>
           </div>
         </div>
       </div>
-      <div class="container p-4 my-5 bg-secondary text-black rounded">
-        <div class="container-md bg-light">
-          <div class="row">
-            <div class="col text-center h2">Menu Item</div>
-            <div class="col text-center h2">Price</div>
-            <div class="col text-center h2">Quantity</div>
+      <div className="container p-4 my-5 bg-secondary text-black rounded">
+        <div className="container-md bg-light">
+          <div className="row">
+            <div className="col text-center h2">Menu Item</div>
+            <div className="col text-center h2">Price</div>
+            <div className="col text-center h2">Quantity</div>
           </div>
         </div>
       </div>
