@@ -28,16 +28,24 @@ export default function CartPage() {
   },0);
 
 
-  // const checkout = async ()=>{
-  //   try {
-      
-  //     const response = await fetch("http://localhost:5000/checkout",{
-  //       method:"DELETE"
-  //     })
-  //   } catch (err) {
-  //     console.error(err.message)
-  //   }
-  // }
+  const checkout = async ()=>{
+    try {
+      if(!cartItems)
+      {
+        const response = await fetch("http://localhost:5000/checkout",{
+          method:"DELETE",
+          headers: { token: localStorage.token },
+        })
+        const jsonData = await response.json();
+        console.log(jsonData)
+        
+        window.location.reload();
+
+      }
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
 
   return (
     <div>
@@ -62,7 +70,7 @@ export default function CartPage() {
         <h2>Total Price: ${total} </h2>
       </div>
       <div className="d-grid gap-2 d-md-flex justify-content-md-endd-grid gap-2 d-md-flex justify-content-md-end me-5 pe-5">
-        <button className="btn btn-primary btn-lg" type="button">
+        <button className="btn btn-primary btn-lg" type="button" onClick={checkout}>
           Checkout
         </button>
       </div>
