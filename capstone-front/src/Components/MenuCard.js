@@ -4,11 +4,9 @@ import MenuItems from "./MenuItems";
 
 export default function MenuCard({ item }) {
     let [inCart, setInCart] = useState();
-    const f_id_fk = item.f_id
-    const f_qty = 1
       const postToCart = async () => {
           try {
-            const body = {f_id_fk, f_qty}
+            const body = {f_id_fk:item.f_id, f_qty:1}
               const response = await fetch("http://localhost:5000/shoppingCart",{
                 method: "POST",
                 headers:{token: localStorage.token},
