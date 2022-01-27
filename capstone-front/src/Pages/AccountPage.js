@@ -73,13 +73,24 @@ export default function AccountPage(props){
 
     }
 
+    const validateEmail = (email) => {
+        return String(email)
+          .toLowerCase()
+          .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          );
+      };
+      const passwordValidation = (password) => {
+        // minimum 8 characters, at least one Uppercase letter and one number
+        return password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/);
+      };
+
     function signIn() {
         if(!isRegistered){
 
             if([u_email, u_password].every(Boolean))
             {
-                LoginAPI()
-                
+                LoginAPI()   
             }
 
            
@@ -88,7 +99,10 @@ export default function AccountPage(props){
         {
             if([u_email, u_password, u_name].every(Boolean))
             {
-                RegisterAPI()
+                if(validateEmail(u_email)&&passwordValidation(u_password))
+                {
+                    RegisterAPI()
+                }
             }
            
         }
@@ -96,8 +110,8 @@ export default function AccountPage(props){
 
 
     return(
-        <div className="form">
-            <div className = "formContainer">
+        <div className="form ">
+            <div className = "formContainer width">
                 <div id = "showRegister" style={{display: "none"}}>
                 <label>Name</label>
                 <input  placeholder="Name" className="inputBox" onChange={onchangeName}></input>

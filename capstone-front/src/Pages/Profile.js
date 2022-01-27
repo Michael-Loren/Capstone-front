@@ -36,7 +36,7 @@ function Profile(props) {
     }
 
     return (<div>
-    <h1 className='width'>HELLO!!&nbsp;{Name}</h1>
+    <h1>HELLO!!&nbsp;{Name}</h1>
     <button className="btn btn-primary mt-2 btnLogout" onClick={Logout}>Logout</button>
     </div>);
 }
