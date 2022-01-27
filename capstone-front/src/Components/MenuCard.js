@@ -20,8 +20,8 @@ export default function MenuCard({ item }) {
       <div class="container">
         <h4><b className="cardItem">{item.f_name}</b></h4>
         <div className="cardItem">{item.f_desc}</div>
-        <p className="inner cardItem">{item.f_price}</p>
-        <button className="bi bi-cart cardBtn btn btn-warning" onClick={e => addToCart(e)}>{inCart ? " Added" : " Add to Cart"}</button>
+        <p className="inner cardItem bottom">{item.f_price}</p>
+        <button className="bi bi-cart cardBtn btn btn-warning bottom" onClick={e => addToCart(e)}>{inCart ? " Added" : " Add to Cart"}</button>
       </div>
       </div>
     )
