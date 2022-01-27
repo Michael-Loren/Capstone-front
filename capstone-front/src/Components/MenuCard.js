@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import MenuItems from "./MenuItems";
 
 export default function MenuCard({ item }) {
     let [inCart, setInCart] = useState();
-      const postToCart = async () => {
-          try {
-            const body = {f_id_fk:item.f_id, f_qty:1}
-              const response = await fetch("http://localhost:5000/shoppingCart",{
+
+
+    const postToCart = async () => {
+      try {
+            let f_id_fk = item.f_id
+            let f_qty = 1
+            const body = {f_id_fk, f_qty}
+              const response = await fetch(`http://localhost:5000/shoppingCart/`,{
                 method: "POST",
                 headers:{token: localStorage.token},
                 body: JSON.stringify(body),
               });
               const jsonData = await response.json();
              console.log(jsonData)
-              console.log(f_id_fk)
           } catch (err) {
               console.error(err);
           }
