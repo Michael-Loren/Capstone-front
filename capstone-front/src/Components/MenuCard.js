@@ -1,7 +1,8 @@
 import React from "react"
 import { useState } from "react"
+import MenuItems from "./MenuItems";
 
-export default function MenuCard() {
+export default function MenuCard({ item }) {
 
     let [inCart, setInCart] = useState(false);
 
@@ -15,15 +16,13 @@ export default function MenuCard() {
     }
 
     return(
-        <div className="card">
-            <img alt = "" prop = "" src="https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2017/08/sushi-2853382.jpg" className="foodImage"/>
-            <div className="container">
-                <div className="bottomCard">
-                <h4><b>Food Name</b></h4>
-                    <p className="inner">$$$$</p>
-                    <button className="bi bi-cart navBtn btn btn-warning" onClick={e => addToCart(e)}>{inCart ? " Added" : " Add to Cart"}</button>
-                </div>
-            </div>
-        </div>
+      <div class="card">
+      <div class="container">
+        <h4><b className="cardItem">{item.f_name}</b></h4>
+        <div className="cardItem">{item.f_desc}</div>
+        <p className="inner cardItem">{item.f_price}</p>
+        <button className="bi bi-cart cardBtn btn btn-warning" onClick={e => addToCart(e)}>{inCart ? " Added" : " Add to Cart"}</button>
+      </div>
+      </div>
     )
 }
