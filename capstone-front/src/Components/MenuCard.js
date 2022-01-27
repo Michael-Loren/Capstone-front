@@ -3,14 +3,31 @@ import { useState } from "react";
 import MenuItems from "./MenuItems";
 
 export default function MenuCard({ item }) {
-  let [inCart, setInCart] = useState(false);
+    let [inCart, setInCart] = useState();
+    const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = async (e) => {
-    setInCart(!inCart);
-    if (!inCart) {
-      e.target.classList.replace(e.target.classList[4], "btn-success");
-    } else {
-      e.target.classList.replace(e.target.classList[4], "btn-warning");
+      const postToCart = async () => {
+          try {
+              const response = await fetch("http://localhost:5000/shoppingCart",{
+                method: "POST",
+                headers:{token: localStorage.token}
+              });
+              const jsonData = await response.json();
+              setCartItems(jsonData);
+              console.log(jsonData)
+          } catch (err) {
+              console.error(err);
+          }
+      }
+
+    const addToCart = async e => {    
+        setInCart(!inCart);
+        if(!inCart){
+        e.target.classList.replace(e.target.classList[4],"btn-success");
+        postToCart(e)}
+        else{
+        e.target.classList.replace(e.target.classList[4],"btn-warning");
+        }
     }
   };
 
