@@ -29,7 +29,7 @@ export default function HomePage() {
 
 
   return (
-    <div>
+    <div className="width">
       <SideMenu  allFoods = {foodItems} setType = {setType}/>
       <MenuItems allFoods = {foodItems}/>
     </div>
