@@ -29,7 +29,7 @@ export default function MenuCard({ item }) {
         e.target.classList.replace(e.target.classList[4],"btn-warning");
         }
     }
-  };
+  
 
   return (
     <div class="card">
@@ -48,4 +48,4 @@ export default function MenuCard({ item }) {
       </div>
     </div>
   );
-}
+  }
