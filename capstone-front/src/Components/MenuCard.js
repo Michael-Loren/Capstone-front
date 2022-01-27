@@ -4,18 +4,19 @@ import MenuItems from "./MenuItems";
 
 export default function MenuCard({ item }) {
     let [inCart, setInCart] = useState();
-    const [cartItems, setCartItems] = useState([]);
-
+    const f_id_fk = item.f_id
+    const f_qty = 1
       const postToCart = async () => {
           try {
-            const body = {}
+            const body = {f_id_fk, f_qty}
               const response = await fetch("http://localhost:5000/shoppingCart",{
                 method: "POST",
-                headers:{token: localStorage.token}
+                headers:{token: localStorage.token},
+                body: JSON.stringify(body),
               });
               const jsonData = await response.json();
-              setCartItems(jsonData);
-              console.log(jsonData)
+             console.log(jsonData)
+              console.log(f_id_fk)
           } catch (err) {
               console.error(err);
           }
@@ -25,7 +26,7 @@ export default function MenuCard({ item }) {
         setInCart(!inCart);
         if(!inCart){
         e.target.classList.replace(e.target.classList[4],"btn-success");
-        postToCart(e)}
+        postToCart()}
         else{
         e.target.classList.replace(e.target.classList[4],"btn-warning");
         }
@@ -33,7 +34,7 @@ export default function MenuCard({ item }) {
   
 
   return (
-    <div class="card">
+    <div id={item.f_id} class="card">
       <div class="container">
         <h4>
           <b className="cardItem">{item.f_name}</b>
