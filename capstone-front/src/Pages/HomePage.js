@@ -4,6 +4,7 @@ import MenuItems from "../Components/MenuItems";
 import SideMenu from "../Components/SideMenu";
 import { useState, useEffect } from "react";
 
+
 export default function HomePage() {
 
   const [foodItems, setFoodItems] = useState([])
