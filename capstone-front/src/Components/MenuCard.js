@@ -15,10 +15,6 @@ export default function MenuCard({ item }) {
         }
     }
 
-    console.log(item.f_desc)
-    console.log(item.f_price)
-    console.log(item.f_name)
-
     return(
       <div class="card">
       <div class="container">
