@@ -44,7 +44,7 @@ export default function AccountPage(props){
             const data = await response.json()
             localStorage.setItem('token',data.token)
             setIsLogin(true)
-            window.location = "/home"
+           // window.location = "/home"
         } catch (err) {
             console.log(err.message)
         }
@@ -63,7 +63,7 @@ export default function AccountPage(props){
             const data = await response.json()
             localStorage.setItem('token',data.token)
             setIsLogin(true)
-             window.location = "/home"
+            // window.location = "/home"
             
 
         } catch (err) {
@@ -75,13 +75,21 @@ export default function AccountPage(props){
 
     function signIn() {
         if(!isRegistered){
-            LoginAPI()
-            
+
+            if([u_email, u_password].every(Boolean))
+            {
+                LoginAPI()
+                
+            }
+
            
         }
         else 
         {
-            RegisterAPI()
+            if([u_email, u_password, u_name].every(Boolean))
+            {
+                RegisterAPI()
+            }
            
         }
     }
