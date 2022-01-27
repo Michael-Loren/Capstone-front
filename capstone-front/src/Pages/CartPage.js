@@ -30,8 +30,8 @@ export default function CartPage() {
 
   const checkout = async ()=>{
     try {
-      if(!cartItems)
-      {
+     
+      
         const response = await fetch("http://localhost:5000/checkout",{
           method:"DELETE",
           headers: { token: localStorage.token },
@@ -41,7 +41,7 @@ export default function CartPage() {
         
         window.location.reload();
 
-      }
+      
     } catch (err) {
       console.error(err.message)
     }

@@ -8,6 +8,7 @@ export default function MenuCard({ item }) {
 
       const postToCart = async () => {
           try {
+            const body = {}
               const response = await fetch("http://localhost:5000/shoppingCart",{
                 method: "POST",
                 headers:{token: localStorage.token}
