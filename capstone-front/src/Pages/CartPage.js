@@ -1,6 +1,28 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 export default function CartPage() {
+
+  const [cartItems, setCartItems] = useState([]);
+
+  const fetchCart = async () => {
+      try {
+          const response = await fetch("http://localhost:5000/shoppingCart",{
+            method: "GET",
+            headers:{token: localStorage.token}
+          });
+          const jsonData = await response.json();
+          setCartItems(jsonData);
+          console.log(jsonData)
+      } catch (err) {
+          console.error(err);
+      }
+  }
+
+  useEffect(()=>{
+    fetchCart()
+  },[])
+
   return (
     <div>
       <h1>Shopping Cart</h1>
@@ -13,24 +35,8 @@ export default function CartPage() {
           </div>
         </div>
       </div>
-      <div className="container p-4 my-5 bg-secondary text-black rounded">
-        <div className="container-md  bg-light">
-          <div className="row">
-            <div className="col text-center h2">Menu Item</div>
-            <div className="col text-center h2">Price</div>
-            <div className="col text-center h2">Quantity</div>
-          </div>
-        </div>
-      </div>
-      <div className="container p-4 my-5 bg-secondary text-black rounded">
-        <div className="container-md bg-light">
-          <div className="row">
-            <div className="col text-center h2">Menu Item</div>
-            <div className="col text-center h2">Price</div>
-            <div className="col text-center h2">Quantity</div>
-          </div>
-        </div>
-      </div>
+
+      {/* bottom */}
       <div className="ms-5 ps-5 ">
         <h2>Total Price: $0.00 </h2>
       </div>
